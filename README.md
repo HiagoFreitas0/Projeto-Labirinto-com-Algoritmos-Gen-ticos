@@ -6,15 +6,15 @@
 Este projeto implementa um algoritmo genético para encontrar o melhor caminho em um labirinto. Cada indivíduo da população representa um caminho (sequência de movimentos) e evolui ao longo das gerações
 ##
 
-🚀 Como Funciona
+Como Funciona:
 
-🗺️ Modelo do Mapa: O labirinto é representado como uma matriz de caracteres
+- Modelo do Mapa: O labirinto é representado como uma matriz de caracteres
 
-🧬 População Inicial: Cada indivíduo tem uma sequência aleatória de movimentos com tamanho dinâmico
+- População Inicial: Cada indivíduo tem uma sequência aleatória de movimentos com tamanho dinâmico
 
-📍 Simulação de Caminhos: Os movimentos são aplicados a partir da posição inicial (S)
+- Simulação de Caminhos: Os movimentos são aplicados a partir da posição inicial (S)
 
-🎯 Cálculo de Fitness: Com base na distância até a saída (E) e penalizações por colisão
+- Cálculo de Fitness: Com base na distância até a saída (E) e penalizações por colisão
 ##
 
 📂 Estrutura do Projeto
