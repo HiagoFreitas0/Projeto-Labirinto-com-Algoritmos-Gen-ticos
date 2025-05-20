@@ -3,8 +3,6 @@
 #include <time.h>
 #include "labirinto.h"
 
-void imprimir_caminho(const char *movimentos);
-
 int main() {
     srand(time(NULL));
 
@@ -26,7 +24,6 @@ int main() {
             break;
         }
     }
-
     liberar_populacao(pop);
     return 0;
 }
