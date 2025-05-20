@@ -1,7 +1,7 @@
 # Projeto-Labirinto-com-Algoritmos-Gen-ticos
 🌐 Labirinto com Algoritmos Genéticos
 
-📌 Descrição
+ Descrição
 
 Este projeto implementa um algoritmo genético para encontrar o melhor caminho em um labirinto. Cada indivíduo da população representa um caminho (sequência de movimentos) e evolui ao longo das gerações
 ##
