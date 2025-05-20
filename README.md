@@ -3,7 +3,7 @@
 
  Descrição
 
-Este projeto implementa um algoritmo genético para encontrar o melhor caminho em um labirinto. Cada indivíduo da população representa um caminho (sequência de movimentos) e evolui ao longo das gerações
+Este projeto implementa um algoritmo genético para encontrar o melhor caminho em um labirinto. Cada indivíduo da população representa um caminho (sequência de movimentos).
 ##
 
 Como Funciona:
