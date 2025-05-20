@@ -13,7 +13,7 @@ char labirinto[ALTURA][LARGURA] = {
 };
 
 struct individuo {
-    char movimentos[GENOME_SIZE];
+    char movimentos[GENOME_SIZE];//caminho
     int fitness;
     Individuo *prox;
 };
@@ -35,7 +35,7 @@ Populacao* criar_populacao() {
 }
 
 void inicializar_populacao(Populacao *pop) {
-    int ex = 8, ey = 4;
+    int ex = 8, ey = 4; // (saida)
     int tamanho_min = distancia_manhattan(1, 1, ex, ey);
     int tamanho_max = tamanho_min * 2;
 
@@ -54,21 +54,29 @@ void inicializar_populacao(Populacao *pop) {
 }
 
 int calcular_fitness(char *movimentos) {
-    int x = 1, y = 1;
+    int x = 1, y = 1; //(inicial)
     int ex = 8, ey = 4;
 
     for (int i = 0; movimentos[i] != '\0'; i++) {
         int nx = x, ny = y;
 
         switch (movimentos[i]) {
-            case 'C': ny = y - 1; break;
-            case 'B': ny = y + 1; break;
-            case 'E': nx = x - 1; break;
-            case 'D': nx = x + 1; break;
+            case 'C':
+            ny = y - 1; 
+            break;
+            case 'B':
+            ny = y + 1; 
+            break;
+            case 'E':
+            nx = x - 1; 
+            break;
+            case 'D':
+            nx = x + 1; 
+            break;
         }
 
-        if (labirinto[ny][nx] == '#') {
-            // Colisão: para o caminho
+        if(labirinto[ny][nx] == '#'){
+            // Colisão (para o caminho)
             break;
         } else {
             x = nx;
@@ -81,7 +89,8 @@ int calcular_fitness(char *movimentos) {
     double distancia = sqrt(dx * dx + dy * dy);
 
     int fitness = (int)(1000 - distancia * 10);
-    if (fitness < 0) fitness = 0;
+    if (fitness < 0) 
+    fitness = 0;
     return fitness;
 }
 
@@ -92,7 +101,6 @@ void avaliar_populacao(Populacao *pop) {
         atual = atual->prox;
     }
 }
-
 
 Individuo *melhor_individuo(Populacao *pop) {
     Individuo *atual = pop->inicio;
