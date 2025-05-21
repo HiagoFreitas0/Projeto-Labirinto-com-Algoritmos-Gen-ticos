@@ -140,3 +140,14 @@ void imprimir_caminho(const char *movimentos) {
     }
     printf("]\n");
 }
+
+void imprimir_individuos(Populacao *pop) {
+    Individuo *atual = pop->inicio;
+    int i = 1;
+    while (atual) {
+        printf("Individuo %d: ", i++);
+        imprimir_caminho(atual->movimentos);
+        atual = atual->prox;
+    }
+}
+
