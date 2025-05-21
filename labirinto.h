@@ -67,4 +67,10 @@ const char* obter_movimentos(const Individuo *ind);
  */
 void imprimir_caminho(const char *movimentos);
 
+/**
+ * Imprime os caminhos de todos os indivíduos da população.
+ * @param pop Ponteiro para a população
+ */
+void imprimir_individuos(Populacao *pop);
+
 #endif
