@@ -14,7 +14,10 @@ int main() {
 
         Individuo *melhor = melhor_individuo(pop);
 
-        printf("Geracao %d\n", geracao);
+        printf("\nTodos os individuos da geracao %d:\n", geracao);
+        imprimir_individuos(pop);
+
+        printf("\nGeracao %d\n", geracao);
         printf("Melhor Fitness: %d\n",obter_fitness(melhor));
         printf("Melhor caminho: ");
         imprimir_caminho(obter_movimentos(melhor));
