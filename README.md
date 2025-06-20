@@ -1,13 +1,13 @@
 
-# 🧠 Projeto: Resolução de Labirintos com Algoritmos Genéticos
+# Projeto: Resolução de Labirintos com Algoritmos Genéticos
 
 Este projeto tem como objetivo utilizar algoritmos genéticos para encontrar soluções de caminhos em labirintos, como parte da disciplina de Estrutura de Dados I (ED-I).
 
 ---
 
-## 🚀 Como Executar
+##  Como Executar
 
-### ✔️ Compilar:
+### Compilar:
 
 Execute no terminal:
 
@@ -23,7 +23,7 @@ gcc main.c labirinto.c config.c -o labirinto
 
 ---
 
-### ▶️ Rodar o programa:
+###  Rodar o programa:
 
 ```bash
 ./labirinto <caminho_do_mapa.txt> <caminho_do_config.yml>
@@ -37,7 +37,7 @@ gcc main.c labirinto.c config.c -o labirinto
 
 ---
 
-## 🗺️ Arquivos de Entrada
+## Arquivos de Entrada
 
 ### 🔹 Mapa (`mapa.txt`):
 - Representa o labirinto.
@@ -52,7 +52,7 @@ gcc main.c labirinto.c config.c -o labirinto
 ### 🔹 Configuração (`config.yml`):
 Arquivo YAML que define os parâmetros do algoritmo.
 
-#### 🔧 Exemplo de configuração:
+#### Exemplo de configuração:
 
 ```yaml
 taxa_elitismo: 0.1
@@ -67,9 +67,9 @@ saida_log: logs/experimento1.csv
 
 ---
 
-## 🗂️ Saídas do Programa
+## Saídas do Programa
 
-### 📄 Log CSV:
+### Log CSV:
 
 O programa gera um log no formato CSV com os seguintes dados:
 
@@ -81,7 +81,7 @@ O programa gera um log no formato CSV com os seguintes dados:
 
 ---
 
-### 📊 Gráficos:
+### Gráficos:
 
 Você pode abrir o CSV no Excel, Google Planilhas ou Python e gerar gráficos de evolução do fitness.
 
@@ -90,14 +90,8 @@ Você pode abrir o CSV no Excel, Google Planilhas ou Python e gerar gráficos de
 
 ---
 
-## 🔧 Requisitos
 
-- Compilador `gcc` ou equivalente.
-- (Opcional) `make` para usar o Makefile.
-
----
-
-## 🏗️ Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 .
@@ -107,29 +101,15 @@ Você pode abrir o CSV no Excel, Google Planilhas ou Python e gerar gráficos de
 ├── graficos/          → Gráficos gerados (PNG, Excel, etc.)
 ├── main.c             → Código principal
 ├── labirinto.c/.h     → TAD Labirinto, População e Indivíduo
-├── config.c/.h        → Leitura do arquivo de configuração
-├── Makefile           → Automatiza compilação e limpeza
-└── README.md          → Documentação
+└── config.c/.h        → Leitura do arquivo de configuração
 ```
 
 ---
 
-## ✍️ Autores
+## Autores
 
-- 💻 **Seu Nome Aqui**
+- 💻 **Hiago Freitas Jatobá**
 - 📅 Junho de 2025
 - 📚 Disciplina: Estrutura de Dados I (ED-I)
 
 ---
-
-## ✅ Status do Projeto
-
-✔️ Funcional  
-✔️ Atende todos os requisitos  
-✔️ Pronto para entrega e apresentação
-
----
-
-## 📜 Licença
-
-Uso acadêmico.
