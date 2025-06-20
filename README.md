@@ -1,35 +1,108 @@
-# Projeto-Labirinto-com-Algoritmos-Gen-ticos
-🌐 Labirinto com Algoritmos Genéticos
+README.md
+markdown
+Copiar
+Editar
+# 🧠 Projeto: Resolução de Labirintos com Algoritmos Genéticos
 
- Descrição
+Este projeto tem como objetivo utilizar algoritmos genéticos para encontrar soluções de caminhos em labirintos, como parte da disciplina de Estrutura de Dados I (ED-I).
 
-Este projeto implementa um algoritmo genético para encontrar o melhor caminho em um labirinto. Cada indivíduo da população representa um caminho (sequência de movimentos).
-##
+---
 
-Como Funciona:
+## 🚀 Como Executar
 
-- Modelo do Mapa: O labirinto é representado como uma matriz de caracteres
+### ✔️ Compilar:
 
-- População Inicial: Cada indivíduo tem uma sequência aleatória de movimentos com tamanho dinâmico
+Execute no terminal:
 
-- Simulação de Caminhos: Os movimentos são aplicados a partir da posição inicial (S)
+```bash
+make
+Ou manualmente:
 
-- Cálculo de Fitness: Com base na distância até a saída (E) e penalizações por colisão
-##
+bash
+Copiar
+Editar
+gcc main.c labirinto.c config.c -o labirinto
+▶️ Rodar o programa:
+bash
+Copiar
+Editar
+./labirinto <caminho_do_mapa.txt> <caminho_do_config.yml>
+Exemplo:
+bash
+Copiar
+Editar
+./labirinto mapas/mapa01.txt configs/config1.yml
+🗺️ Arquivos de Entrada
+🔹 Mapa (mapa.txt):
+Representa o labirinto.
 
-📂 Estrutura do Projeto
+Símbolos:
 
-| labirinto.h | labirinto.c | main.c |
-|-------------|-------------|--------|
-|Cabeçalho do TAD| Implementação das funções| Função principal (execução)|
+E → Entrada
 
-##
+S → Saída
 
- Exemplo de Saída
+# → Parede
 
- Geração 0 - Melhor Fitness: 820
-Melhor caminho: [D, D, B, B, D, E, E, B, C]
+(espaço) → Caminho livre
 
-Geração 50 - Melhor Fitness: 999
-Melhor caminho: [D, D, D, B, B, B, B, D, D]
-##
+🔹 Configuração (config.yml):
+Arquivo YAML que define os parâmetros do algoritmo.
+
+🔧 Exemplo de configuração:
+yaml
+Copiar
+Editar
+taxa_elitismo: 0.1
+taxa_mutacao: 0.05
+tamanho_populacao: 100
+geracoes: 200
+tipo_geracao: apenas_movimentos_validos  # ou aleatorio
+max_tamanho_individuo: 300
+penalidade_movimento_invalido: true
+saida_log: logs/experimento1.csv
+🗂️ Saídas do Programa
+📄 Log CSV:
+O programa gera um log no formato CSV com os seguintes dados:
+
+Geracao	Fitness	Caminho
+1	410	DDEBEDBDCB...
+2	540	BEDDDCCB...
+...	...	...
+
+📊 Gráficos:
+Você pode abrir o CSV no Excel, Google Planilhas ou Python e gerar gráficos de evolução do fitness.
+
+Eixo X: Geração
+Eixo Y: Fitness do melhor indivíduo
+
+🔧 Requisitos
+Compilador gcc ou equivalente.
+
+(Opcional) make para usar o Makefile.
+
+🏗️ Estrutura do Projeto
+bash
+Copiar
+Editar
+.
+├── configs/           → Arquivos de configuração (.yml)
+├── mapas/             → Arquivos dos mapas (.txt)
+├── logs/              → Logs gerados em CSV
+├── graficos/          → Gráficos gerados (PNG, Excel, etc.)
+├── main.c             → Código principal
+├── labirinto.c/.h     → TAD Labirinto, População e Indivíduo
+├── config.c/.h        → Leitura do arquivo de configuração
+├── Makefile           → Automatiza compilação e limpeza
+└── README.md          → Documentação
+✍️ Autores
+💻 Seu Nome Aqui
+
+📅 Junho de 2025
+
+📚 Disciplina: Estrutura de Dados I (ED-I)
+
+✅ Status do Projeto
+✔️ Funcional
+✔️ Atende todos os requisitos
+✔️ Pronto para entrega e apresentação
