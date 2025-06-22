@@ -113,3 +113,46 @@ Você pode abrir o CSV no Excel, Google Planilhas ou Python e gerar gráficos de
 - 📚 Disciplina: Estrutura de Dados I (ED-I)
 
 ---
+
+Análise dos Resultados
+Foram executados dois experimentos, cada um com um arquivo de configuração diferente, para comparar o comportamento do algoritmo com diferentes parâmetros.
+
+🧪 Experimento 1 — Exploração Alta (Aleatório)
+yaml
+Copiar
+Editar
+taxa_elitismo: 0.1
+taxa_mutacao: 0.2
+tamanho_populacao: 50
+geracoes: 100
+tipo_geracao: aleatorio
+max_tamanho_individuo: 200
+penalidade_movimento_invalido: true
+saida_log: logs/experimento1.csv
+Observações:
+
+Fitness mais instável, com muita oscilação.
+
+Maior diversidade devido à alta taxa de mutação.
+
+Demorou mais para estabilizar um caminho ótimo.
+
+🧪 Experimento 2 — Conservador (Apenas Movimentos Válidos)
+yaml
+Copiar
+Editar
+taxa_elitismo: 0.4
+taxa_mutacao: 0.02
+tamanho_populacao: 100
+geracoes: 100
+tipo_geracao: apenas_movimentos_validos
+max_tamanho_individuo: 200
+penalidade_movimento_invalido: true
+saida_log: logs/experimento2.csv
+Observações:
+
+Fitness sobe de forma estável e consistente.
+
+Menor diversidade, mas maior foco na otimização dos melhores.
+
+Convergência mais rápida, porém com risco de mínimos locais.
