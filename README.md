@@ -139,7 +139,7 @@ penalidade_movimento_invalido: true
 saida_log: logs/experimento2.csv
 ```
 ---
-## Autores
+## Autore
 
 -  **Hiago Freitas Jatobá**
 -  Junho de 2025
