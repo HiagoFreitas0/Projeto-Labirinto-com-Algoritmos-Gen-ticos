@@ -9,13 +9,7 @@ Este projeto tem como objetivo utilizar algoritmos genéticos para encontrar sol
 
 ### Compilar:
 
-Execute no terminal:
-
-```bash
-make
-```
-
-Ou manualmente:
+manualmente:
 
 ```bash
 gcc main.c labirinto.c config.c -o labirinto
