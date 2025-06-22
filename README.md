@@ -123,7 +123,8 @@ tipo_geracao: aleatorio
 max_tamanho_individuo: 200
 penalidade_movimento_invalido: true
 saida_log: logs/experimento1.csv
-
+```
+---
 ## Autores
 
 - 💻 **Hiago Freitas Jatobá**
