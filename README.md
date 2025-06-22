@@ -106,6 +106,24 @@ Você pode abrir o CSV no Excel, Google Planilhas ou Python e gerar gráficos de
 
 ---
 
+## Análise dos Resultados
+
+Foram executados dois experimentos, cada um com um arquivo de configuração diferente, para comparar o comportamento do algoritmo com diferentes parâmetros.
+
+---
+
+### Experimento 1 — Exploração Alta (Aleatório)
+
+```yaml
+taxa_elitismo: 0.1
+taxa_mutacao: 0.2
+tamanho_populacao: 50
+geracoes: 100
+tipo_geracao: aleatorio
+max_tamanho_individuo: 200
+penalidade_movimento_invalido: true
+saida_log: logs/experimento1.csv
+
 ## Autores
 
 - 💻 **Hiago Freitas Jatobá**
