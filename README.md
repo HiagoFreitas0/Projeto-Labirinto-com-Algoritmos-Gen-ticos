@@ -141,9 +141,9 @@ saida_log: logs/experimento2.csv
 ---
 ## Autores
 
-- 💻 **Hiago Freitas Jatobá**
-- 📅 Junho de 2025
-- 📚 Disciplina: Estrutura de Dados I (ED-I)
+-  **Hiago Freitas Jatobá**
+-  Junho de 2025
+-  Disciplina: Estrutura de Dados I (ED-I)
 
 ---
 
