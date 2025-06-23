@@ -35,6 +35,5 @@ const char *obter_movimentos(const Individuo *ind);
 
 // Impressão
 void imprimir_caminho(const char *movimentos);
-void imprimir_individuos(Populacao *pop);
 
 #endif

@@ -49,7 +49,6 @@ Config* ler_config(const char *caminho) {
                 strcpy(config->caminho_saida_log, valor);
         }
     }
-
     fclose(arquivo);
     return config;
 }

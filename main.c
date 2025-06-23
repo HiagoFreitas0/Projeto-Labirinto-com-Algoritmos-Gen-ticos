@@ -42,7 +42,6 @@ int main(int argc, char *argv[]) {
     }
     fprintf(log, "Geracao,Fitness,Caminho\n");
 
-    // Criar população inicial
     Populacao *pop = criar_populacao();
     inicializar_populacao(pop, lab, config->tamanho_populacao, config->max_tamanho_individuo, config->tipo_geracao);
 
@@ -54,7 +53,6 @@ int main(int argc, char *argv[]) {
         int n_elite = (int)(config->taxa_elitismo * config->tamanho_populacao);
         if (n_elite < 1) n_elite = 1;
 
-        // Criar nova população
         Populacao *nova_pop = criar_populacao();
 
         // Copiar elite
@@ -90,7 +88,7 @@ int main(int argc, char *argv[]) {
         fprintf(log, "%d,%d,%s\n", geracao, obter_fitness(melhor), obter_movimentos(melhor));
 
         if (obter_fitness(melhor) >= 1000) {
-            printf("Solução encontrada na geração %d!\n", geracao);
+            printf("Solução encontrada na geracao %d!\n", geracao);
             break;
         }
     }
@@ -100,6 +98,5 @@ int main(int argc, char *argv[]) {
     liberar_labirinto(lab);
     liberar_config(config);
 
-    printf("\nExecução finalizada. Veja o log em %s\n", config->caminho_saida_log);
-    return 0;
+    printf("\nExecucao finalizada Veja o log em %s\n", config->caminho_saida_log);
 }

@@ -6,8 +6,7 @@
 
 struct labirinto {
     char mapa[ALTURA][LARGURA];
-    int x_inicio, y_inicio;
-    int x_saida, y_saida;
+    int x_inicio, y_inicio, x_saida, y_saida;
 };
 
 struct individuo {
@@ -133,8 +132,8 @@ void inicializar_populacao(Populacao *pop, Labirinto *lab, int tam_pop, int max_
 int calcular_fitness(Labirinto *lab, const char *mov, int penalidade) {
     int x = lab->x_inicio;
     int y = lab->y_inicio;
-    int penal = 0;
 
+    int penal = 0;
     for (int i = 0; mov[i] != '\0'; i++) {
         int nx = x, ny = y;
         switch (mov[i]) {
@@ -161,8 +160,7 @@ int calcular_fitness(Labirinto *lab, const char *mov, int penalidade) {
     double distancia = sqrt(dx * dx + dy * dy);
 
     int fit = (int)(1000 - distancia * 10 - penal * 20);
-    if (fit < 0) 
-    fit = 0;
+    if (fit < 0) fit = 0;
     return fit;
 }
 
@@ -227,8 +225,7 @@ Individuo *selecionar_pai(Populacao *pop) {
     if (soma == 0) {
         int idx = rand() % pop->tamanho;
         atual = pop->inicio;
-        for (int i = 0; i < idx; i++) 
-        atual = atual->prox;
+        for (int i = 0; i < idx; i++) atual = atual->prox;
         return atual;
     }
 

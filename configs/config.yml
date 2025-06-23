@@ -5,4 +5,4 @@ geracoes: 200
 tipo_geracao: aleatorio
 max_tamanho_individuo: 300
 penalidade_movimento_invalido: true
-saida_log: experimento1.csv
+saida_log: logs/experimento1.csv
