@@ -13,14 +13,14 @@ typedef struct {
 } Config;
 
 /**
- * Lê um arquivo de configuração no formato simples
+ * Lê um arquivo de configuração
  * @param caminho Caminho para o arquivo de configuração
  * @return Ponteiro para a estrutura Config carregada
  */
 Config* ler_config(const char *caminho);
 
 /**
- * Libera a memória da configuração
+ * Libera a memoria da configuração
  */
 void liberar_config(Config *config);
 

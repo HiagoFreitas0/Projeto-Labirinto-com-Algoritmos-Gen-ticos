@@ -18,13 +18,13 @@ int main(int argc, char *argv[]) {
 
     Labirinto *lab = criar_labirinto(arquivo_mapa);
     if (!lab) {
-        printf("Erro ao carregar o mapa\n");
+        printf("Erro ao tentar carregar o mapa\n");
         return 1;
     }
 
     Config *config = ler_config(arquivo_config);
     if (!config) {
-        printf("Erro ao carregar a configuracao\n");
+        printf("Erro ao tentar carregar a configuracao\n");
         liberar_labirinto(lab);
         return 1;
     }
@@ -32,10 +32,10 @@ int main(int argc, char *argv[]) {
     printf("Labirinto carregado:\n");
     imprimir_labirinto(lab);
 
-    // Abrir log
+    // Abri o log
     FILE *log = fopen(config->caminho_saida_log, "w");
     if (!log) {
-        printf("Erro ao abrir o arquivo de log\n");
+        printf("Erro ao tentar abrir o arquivo de log\n");
         liberar_labirinto(lab);
         liberar_config(config);
         return 1;
@@ -51,7 +51,9 @@ int main(int argc, char *argv[]) {
 
         // Elitismo
         int n_elite = (int)(config->taxa_elitismo * config->tamanho_populacao);
-        if (n_elite < 1) n_elite = 1;
+        if (n_elite < 1) {
+            n_elite = 1;
+        }
 
         Populacao *nova_pop = criar_populacao();
 
@@ -88,7 +90,7 @@ int main(int argc, char *argv[]) {
         fprintf(log, "%d,%d,%s\n", geracao, obter_fitness(melhor), obter_movimentos(melhor));
 
         if (obter_fitness(melhor) >= 1000) {
-            printf("Solução encontrada na geracao %d!\n", geracao);
+            printf("Solucao encontrada na geracao %d\n", geracao);
             break;
         }
     }
@@ -98,5 +100,5 @@ int main(int argc, char *argv[]) {
     liberar_labirinto(lab);
     liberar_config(config);
 
-    printf("\nExecucao finalizada Veja o log em %s\n", config->caminho_saida_log);
+    printf("\nExecucao finalizada veja o log em %s\n", config->caminho_saida_log);
 }

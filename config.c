@@ -6,7 +6,7 @@
 Config* ler_config(const char *caminho) {
     FILE *arquivo = fopen(caminho, "r");
     if (!arquivo) {
-        printf("Erro ao abrir o arquivo de configuracao\n");
+        printf("Erro ao tentar abrir o arquivo de configuracao passado\n");
         return NULL;
     }
 
@@ -23,9 +23,9 @@ Config* ler_config(const char *caminho) {
     strcpy(config->caminho_saida_log, "logs/log.csv");
 
     char linha[256];
-
+    
     while (fgets(linha, sizeof(linha), arquivo)) {
-        // Ignorar comentários e linhas vazias
+        // Ignora comentarios e linhas vazias
         if (linha[0] == '#' || linha[0] == '\n')
             continue;
 

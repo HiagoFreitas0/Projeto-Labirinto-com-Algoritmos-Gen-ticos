@@ -19,11 +19,11 @@ struct populacao {
     Individuo *inicio;
     int tamanho;
 };
-
+//função nova 
 Labirinto *criar_labirinto(const char *arquivo) {
     FILE *f = fopen(arquivo, "r");
     if (!f) {
-        printf("Erro ao abrir mapa\n");
+        printf("Erro ao tentar abrir mapa\n");
         return NULL;
     }
     Labirinto *lab = malloc(sizeof(Labirinto));
@@ -59,7 +59,7 @@ void imprimir_labirinto(Labirinto *lab) {
 void liberar_labirinto(Labirinto *lab) {
     free(lab);
 }
-
+//função nova
 int verificar_parede(Labirinto *lab, int x, int y) {
     if (x < 0 || x >= LARGURA || y < 0 || y >= ALTURA)
         return 1;
@@ -73,7 +73,7 @@ Populacao *criar_populacao() {
     pop->tamanho = 0;
     return pop;
 }
-
+//função nova
 void adicionar_individuo(Populacao *pop, Individuo *ind) {
     ind->prox = pop->inicio;
     pop->inicio = ind;
@@ -157,10 +157,11 @@ int calcular_fitness(Labirinto *lab, const char *mov, int penalidade) {
     }
     double dx = lab->x_saida - x;
     double dy = lab->y_saida - y;
-    double distancia = sqrt(dx * dx + dy * dy);
+    double distancia = sqrt(dx * dx + dy * dy);//√(dx² + dy²)
 
     int fit = (int)(1000 - distancia * 10 - penal * 20);
-    if (fit < 0) fit = 0;
+    if (fit < 0) 
+      fit = 0;
     return fit;
 }
 
@@ -171,11 +172,11 @@ void avaliar_populacao(Populacao *pop, Labirinto *lab, int penalidade) {
         atual = atual->prox;
     }
 }
-
+//função nova
 void selecionar_melhores(Populacao *pop) {
     Individuo **vet = malloc(pop->tamanho * sizeof(Individuo *));
     Individuo *atual = pop->inicio;
-    int i = 0;
+    int i = 0;//preencher o vetor
     while (atual) {
         vet[i++] = atual;
         atual = atual->prox;
@@ -212,7 +213,7 @@ Individuo *melhor_individuo(Populacao *pop) {
     }
     return melhor;
 }
-//roleta
+//função nova (roleta usada)
 Individuo *selecionar_pai(Populacao *pop) {
     int soma = 0;
     Individuo *atual = pop->inicio;
@@ -225,7 +226,8 @@ Individuo *selecionar_pai(Populacao *pop) {
     if (soma == 0) {
         int idx = rand() % pop->tamanho;
         atual = pop->inicio;
-        for (int i = 0; i < idx; i++) atual = atual->prox;
+        for (int i = 0; i < idx; i++) 
+        atual = atual->prox;
         return atual;
     }
 
@@ -241,12 +243,12 @@ Individuo *selecionar_pai(Populacao *pop) {
     }
     return pop->inicio;
 }
-
+//função nova
 Individuo *cruzar(Individuo *pai1, Individuo *pai2) {
     Individuo *filho = malloc(sizeof(Individuo));
     int tam1 = strlen(pai1->movimentos);
     int tam2 = strlen(pai2->movimentos);
-    int menor = tam1 < tam2 ? tam1 : tam2;
+    int menor = tam1 < tam2 ? tam1 : tam2;//verificar
     int corte = menor / 2;
 
     strncpy(filho->movimentos, pai1->movimentos, corte);
@@ -256,7 +258,7 @@ Individuo *cruzar(Individuo *pai1, Individuo *pai2) {
     filho->prox = NULL;
     return filho;
 }
-
+//função nova
 Individuo *copiar_individuo(const Individuo *origem) {
     Individuo *novo = malloc(sizeof(Individuo));
     strcpy(novo->movimentos, origem->movimentos);
@@ -264,7 +266,7 @@ Individuo *copiar_individuo(const Individuo *origem) {
     novo->prox = NULL;
     return novo;
 }
-
+//função nova
 Individuo *obter_individuo_por_posicao(Populacao *pop, int pos) {
     Individuo *atual = pop->inicio;
     int i = 0;
@@ -277,7 +279,7 @@ Individuo *obter_individuo_por_posicao(Populacao *pop, int pos) {
     }
     return NULL;
 }
-
+//função nova
 void mutar(Individuo *ind, float taxa_mutacao) {
     int tam = strlen(ind->movimentos);
     for (int i = 0; i < tam; i++) {
