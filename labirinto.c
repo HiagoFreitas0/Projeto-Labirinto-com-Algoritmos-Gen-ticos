@@ -248,7 +248,7 @@ Individuo *cruzar(Individuo *pai1, Individuo *pai2) {
     Individuo *filho = malloc(sizeof(Individuo));
     int tam1 = strlen(pai1->movimentos);
     int tam2 = strlen(pai2->movimentos);
-    int menor = tam1 < tam2 ? tam1 : tam2;//verificar
+    int menor = tam1 < tam2 ? tam1 : tam2;
     int corte = menor / 2;
 
     strncpy(filho->movimentos, pai1->movimentos, corte);
