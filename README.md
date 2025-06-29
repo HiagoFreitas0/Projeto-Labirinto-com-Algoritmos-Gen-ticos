@@ -19,7 +19,7 @@ gcc main.c labirinto.c config.c -o labirinto
 ### Rodar o programa:
 
 ```bash
-./labirinto <caminho_do_mapa.txt> <caminho_do_config.yml>
+./labirinto caminho_do_mapa.txt caminho_do_config.yml
 ```
 
 ### Exemplo:
