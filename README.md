@@ -122,23 +122,6 @@ saida_log: logs/experimento1.csv
 ---
 
 ---
-##  Experimento 2 — Conservador (Apenas Movimentos Válidos)
-
-```yaml
-taxa_elitismo: 0.4
-taxa_mutacao: 0.02
-tamanho_populacao: 100
-geracoes: 100
-tipo_geracao: apenas_movimentos_validos
-max_tamanho_individuo: 200
-penalidade_movimento_invalido: true
-saida_log: logs/experimento2.csv
-```
-###  Evolução do Fitness — Experimento 2
-
-![Imagem2](https://github.com/user-attachments/assets/71b8b664-d192-46d6-840c-3c5f8b6fe0bd)
-
----
 
 ##  Autor
 
